@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="live_feed=true" db_object_id="7cfe1145b9b303107f44d6fdf419fe75" label="Vendor Request" max_length="40" name="x_cdltd_vendor_o_0_vendor_request" type="collection">
+        <element choice="1" label="Category" max_length="40" name="category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Consulting" value="Consulting"/>
+                <element inactive_on_update="false" label="IT Services" value="IT Services"/>
+                <element inactive_on_update="false" label="Raw Material" value="Raw Material"/>
+                <element inactive_on_update="false" label="Facilities" value="Facilities"/>
+                <element inactive_on_update="false" label="Logistics" value="Logistics"/>
+            </choice>
+        </element>
+        <element choice="1" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Submitted" value="Submitted"/>
+                <element inactive_on_update="false" label="Drafts" value="Drafts"/>
+                <element inactive_on_update="false" label="Under Review" value="Under Review"/>
+                <element inactive_on_update="false" label="Rejected" value="Rejected"/>
+                <element inactive_on_update="false" label="Approved" value="Approved"/>
+                <element inactive_on_update="false" label="Documents Pending" value="Documents Pending"/>
+            </choice>
+        </element>
+        <element label="Number" max_length="40" name="number" type="string"/>
+        <element label="Rejection Comment" max_length="40" name="rejection_comment" type="journal_input"/>
+        <element label="Risk Score" max_length="40" name="risk_score" read_only="true" type="integer"/>
+        <element label="Annual Contract Value" mandatory="true" max_length="38" name="annual_contract_value" type="currency"/>
+        <element label="Bank Account Number" max_length="40" name="bank_account_number" type="string"/>
+        <element label="Procurement Officer" max_length="32" name="procurement_officer" reference="sys_user" type="reference"/>
+        <element choice="1" label="Country" mandatory="true" max_length="40" name="country" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Germany" value="Germany"/>
+                <element inactive_on_update="false" label="Canada" value="Canada"/>
+                <element inactive_on_update="false" label="Denmark" value="Denmark"/>
+                <element inactive_on_update="false" label="Japan" value="Japan"/>
+                <element inactive_on_update="false" label="UAE" value="UAE"/>
+                <element inactive_on_update="false" label="France" value="France"/>
+                <element inactive_on_update="false" label="India" value="India"/>
+                <element inactive_on_update="false" label="Korea" value="Korea"/>
+                <element inactive_on_update="false" label="Brazil" value="Brazil"/>
+                <element inactive_on_update="false" label="Israel" value="Israel"/>
+            </choice>
+        </element>
+        <element label="Tax ID" mandatory="true" max_length="40" name="tax_id" type="string"/>
+        <element label="Vendor Name" mandatory="true" max_length="40" name="vendor_name" type="string"/>
+        <element choice="1" label="Risk Level" max_length="40" name="risk_level" read_only="true" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Medium" value="Medium"/>
+                <element inactive_on_update="false" label="High" value="High"/>
+                <element inactive_on_update="false" label="Low" value="Low"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="procurement_officer"/>
+        </index>
+    </element>
+</database>
